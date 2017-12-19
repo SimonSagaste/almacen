@@ -10,7 +10,7 @@ package modelo;
  * @author simon
  */
 public class Producto {
-    private int codigo,precio,stock;
+    private int codigo,precio,stock,cantidad;
     private String nombre,categoria,marca;
 
     public Producto(int codigo, int precio, int stock, String nombre, String categoria,String marca) {
@@ -19,6 +19,14 @@ public class Producto {
         this.stock = stock;
         this.nombre = nombre;
         this.categoria = categoria;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
     public String getMarca() {

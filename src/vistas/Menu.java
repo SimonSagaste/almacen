@@ -28,10 +28,14 @@ public class Menu extends javax.swing.JFrame {
     }
     public JMenuBar initMenu(){
          barraMenu = new JMenuBar();
-        JMenu jMenuOpera = new JMenu("Operaciones");
+        JMenu jMenuOpera = new JMenu("Producto");
+        JMenu jMenuVenta = new JMenu("Venta");
+        JMenu jMenuProgra = new JMenu("Programa");
         JMenuItem jItem1 = new JMenuItem("Agregar Producto");
         JMenuItem jItem2 = new JMenuItem("Listar");
         JMenuItem jItem3 = new JMenuItem("Cerrar");
+        JMenuItem jItem4 = new JMenuItem("Iniciar Venta");
+        JMenuItem jItem5 = new JMenuItem("Listar Transacciones");
         
         jItem1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ev) {
@@ -45,6 +49,17 @@ public class Menu extends javax.swing.JFrame {
                 frameListar.setVisible(true);
                 dispose();
         }});
+        jItem4.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ev) {
+                JFrame frameListar = new Venta();
+                frameListar.setVisible(true);
+                dispose();
+        }});
+        jItem5.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ev) {
+                JFrame frameListar = new ListaTransacciones();
+                frameListar.setVisible(true);
+        }});
         jItem3.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ev) {
                 dispose();
@@ -52,8 +67,12 @@ public class Menu extends javax.swing.JFrame {
         
         jMenuOpera.add(jItem1);
         jMenuOpera.add(jItem2);
-        jMenuOpera.add(jItem3);
+        jMenuProgra.add(jItem3);
+        jMenuVenta.add(jItem4);
+        jMenuVenta.add(jItem5);
         barraMenu.add(jMenuOpera);
+        barraMenu.add(jMenuVenta);
+        barraMenu.add(jMenuProgra);
         barraMenu.setVisible(true);
         return barraMenu;
     }

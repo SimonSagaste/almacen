@@ -19,7 +19,7 @@ import modelo.Producto;
  *
  * @author simon
  */
-public class Controlador {
+public class ControladorProducto {
     Modelo consulta;
     ArrayList<Producto> lista;
     

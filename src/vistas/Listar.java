@@ -8,7 +8,7 @@ package vistas;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-import controlador.Controlador;
+import controlador.ControladorProducto;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
@@ -20,7 +20,7 @@ import modelo.Producto;
  */
 public class Listar extends javax.swing.JFrame {
     DefaultTableModel table1;
-    Controlador consulta;
+    ControladorProducto consulta;
     ArrayList<Producto> lista;
     Integer varModificar;
     /**
@@ -36,7 +36,7 @@ public class Listar extends javax.swing.JFrame {
         table1.addColumn("Precio");
         table1.addColumn("Stock");
         jTable1.setModel(table1);
-        consulta= new Controlador();
+        consulta= new ControladorProducto();
         varCodigo.addKeyListener(new KeyAdapter()
                                         {
                                            @Override
@@ -207,7 +207,7 @@ public class Listar extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_botonSalirActionPerformed
     private void botonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarActionPerformed
-        consulta = new Controlador();
+        consulta = new ControladorProducto();
         if ( !varCodigo.getText().isEmpty()){
             while(table1.getRowCount()>0) table1.removeRow(0);
             lista = consulta.Buscar(Integer.parseInt(varCodigo.getText()));

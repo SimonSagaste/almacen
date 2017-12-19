@@ -5,7 +5,7 @@
  */
 package vistas;
 
-import controlador.Controlador;
+import controlador.ControladorProducto;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import modelo.Producto;
  * @author simon
  */
 public class Modificar extends javax.swing.JFrame {
-    Controlador consulta;
+    ControladorProducto consulta;
     ArrayList<Producto> lista;
     /**
      * Creates new form Ingresar
@@ -30,7 +30,7 @@ public class Modificar extends javax.swing.JFrame {
         initComponents();
         this.varCodigo.setText(varCodigo);
         this.varCodigo.setEnabled(false);
-        consulta = new Controlador();
+        consulta = new ControladorProducto();
         lista = new ArrayList();
         lista = consulta.Buscar(Integer.parseInt(this.varCodigo.getText()));
             Object[] fila = new Object[6];
@@ -310,7 +310,7 @@ public class Modificar extends javax.swing.JFrame {
 
     private void botonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarActionPerformed
         if (!"".equals(varNombre.getText()) || !"".equals(varMarca.getText()) || !"".equals(varPrecio.getText()) || !"".equals(varStock.getText()) || jComboBox1.getSelectedItem()!="Seleccionar"){
-            consulta = new Controlador();
+            consulta = new ControladorProducto();
             int precio=0,stock=0,codigo;
             String nombre="", categoria="",marca="";
             codigo= new Integer (varCodigo.getText());

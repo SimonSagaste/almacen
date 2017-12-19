@@ -5,7 +5,7 @@
  */
 package vistas;
 
-import controlador.Controlador;
+import controlador.ControladorProducto;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author simon
  */
 public class Ingresar extends javax.swing.JFrame {
-    Controlador consulta;
+    ControladorProducto consulta;
     /**
      * Creates new form Ingresar
      */
@@ -206,7 +206,7 @@ public class Ingresar extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (!"".equals(varNombre.getText()) && !"".equals(varMarca.getText()) && !"".equals(varPrecio.getText()) && !"".equals(varStock.getText()) && jComboBox1.getSelectedItem()!="Seleccionar"){
-            consulta = new Controlador();
+            consulta = new ControladorProducto();
             int precio,stock;
             String nombre, categoria,marca;
             precio=new Integer (varPrecio.getText());
